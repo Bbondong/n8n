@@ -3,8 +3,11 @@ services:
     name: n8n
     env: node
     plan: free
+
+    # ✅ Correction ici : plus de --frozen-lockfile
     buildCommand: pnpm install --no-frozen-lockfile && npx turbo run build --filter=!@n8n/chat
     startCommand: npm run start:default
+
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
@@ -25,7 +28,7 @@ services:
       - key: NODE_OPTIONS
         value: "--max-old-space-size=2048"
 
-      # === 🧠 Configuration de la base PostgreSQL ===
+      # === Base PostgreSQL ===
       - key: DB_TYPE
         value: postgres
       - key: DB_POSTGRESDB_HOST
@@ -39,4 +42,5 @@ services:
       - key: DB_POSTGRESDB_PASSWORD
         value: pWrngGaT7P75fv2XyZ7DdVVjrB0fmR1W
       - key: DB_POSTGRESDB_SSL_CA
-        value: "false"   # tu peux laisser "false" pour Render gratuit
+        value: "false"
+
