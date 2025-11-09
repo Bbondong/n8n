@@ -4,12 +4,12 @@ services:
     env: node
     plan: free
 
-    # ✅ Commande de build corrigée (plus de --frozen-lockfile)
+    # Commande de build corrigée
     buildCommand: pnpm install --no-frozen-lockfile && npx turbo run build --filter=!@n8n/chat
     startCommand: npm run start:default
 
     envVars:
-      # === Authentification basique n8n ===
+      # Authentification basique n8n
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
@@ -29,7 +29,7 @@ services:
       - key: NODE_OPTIONS
         value: "--max-old-space-size=2048"
 
-      # === Base PostgreSQL ===
+      # Base PostgreSQL
       - key: DB_TYPE
         value: postgres
       - key: DB_POSTGRESDB_HOST
