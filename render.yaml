@@ -21,6 +21,6 @@ services:
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: WEBHOOK_TUNNEL_URL
-        value: "https://ton-instance-n8n.onrender.com"
+        value: https://n8n-hblg.onrender.com
       - key: NODE_OPTIONS
         value: "--max-old-space-size=2048"
