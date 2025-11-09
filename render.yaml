@@ -3,7 +3,7 @@ services:
     name: n8n
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: pnpm install --no-frozen-lockfile && npx turbo run build --filter=!@n8n/chat
     startCommand: npm run start:default
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
