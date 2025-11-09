@@ -10,13 +10,13 @@
   "scripts": {
     "prepare": "node scripts/prepare.mjs",
     "preinstall": "node scripts/block-npm-install.js",
-    "build": "turbo run build --filter=!@n8n/chat",
+    "build": "npx turbo run build --filter=!@n8n/chat",
+    "dev": "npx turbo run dev --parallel --env-mode=loose --filter=!@n8n/design-system --filter=!@n8n/chat --filter=!@n8n/task-runner",
+    "clean": "npx turbo run clean",
+    "reset": "node scripts/ensure-zx.mjs && zx scripts/reset.mjs",
     "start": "run-script-os",
     "start:default": "cd packages/cli/bin && ./n8n",
-    "start:tunnel": "./packages/cli/bin/n8n start --tunnel",
-    "dev": "turbo run dev --parallel --env-mode=loose --filter=!@n8n/design-system --filter=!@n8n/chat --filter=!@n8n/task-runner",
-    "clean": "turbo run clean",
-    "reset": "node scripts/ensure-zx.mjs && zx scripts/reset.mjs"
+    "start:tunnel": "./packages/cli/bin/n8n start --tunnel"
   },
   "devDependencies": {
     "turbo": "2.5.4",
