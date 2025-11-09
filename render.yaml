@@ -4,7 +4,7 @@ services:
     env: node
     plan: free
     buildCommand: npm ci && npm run build
-    startCommand: npm run start
+    startCommand: npm run start:default
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
@@ -21,4 +21,6 @@ services:
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: WEBHOOK_TUNNEL_URL
-        value: https://n8n-hblg.onrender.com
+        value: "https://ton-instance-n8n.onrender.com"
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=2048"
