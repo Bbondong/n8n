@@ -3,12 +3,8 @@ services:
     name: n8n
     env: node
     plan: free
-    buildCommand: |
-      corepack enable
-      pnpm install --no-frozen-lockfile
-      pnpm add -D rimraf
-      npx turbo run build --filter=!@n8n/chat
-    startCommand: pnpm run start:default
+    buildCommand: pnpm install --no-frozen-lockfile && npx turbo run build --filter=!@n8n/chat
+    startCommand: npm run start:default
     envVars:
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
