@@ -24,3 +24,4 @@ services:
         value: https://n8n-hblg.onrender.com
       - key: NODE_OPTIONS
         value: "--max-old-space-size=2048"
+
