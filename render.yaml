@@ -21,4 +21,4 @@ services:
       - key: N8N_HOST
         value: "0.0.0.0"
       - key: WEBHOOK_TUNNEL_URL
-        value: "https://ton-url-render.onrender.com"
+        value: https://n8n-hblg.onrender.com
